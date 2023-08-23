@@ -14,7 +14,7 @@ class BasicCache(BaseCaching):
         class __init__ method
         """
         BaseCaching.__init__(self)
-        
+
     def put(self, key, item):
         """
         assign to the dictionary self.cache_data
@@ -27,7 +27,7 @@ class BasicCache(BaseCaching):
             pass
         else:
             self.cache_data[key] = item
-            
+
     def get(self, key):
         """
         return the value in self.cache_data
