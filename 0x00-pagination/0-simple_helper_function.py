@@ -24,7 +24,9 @@ def index_range(page: int, page_size: int) -> Tuple[int, int]:
     if page < 1 or page_size <= 0:
         raise ValueError("Invalid page or page_size")
 
-    start_index = (page - 1) * page_size
-    end_index = start_index + page_size - 1
+    start_index, end_index = 0, 0
+    for i in range(page):
+        start_index = end_index
+        end_index += page_size
 
-    return start_index, end_index
+    return (start_index, end_index)
