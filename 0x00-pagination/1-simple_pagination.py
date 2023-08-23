@@ -49,13 +49,14 @@ class Server:
         """
         Args:
             page (int): required page number. must be a positive integer
-            page_size (int): number of records per page. must be a +ve integer
+            page_size (int): number of records per page. must be
+            a positive integer
         Return:
             list of lists containing required data from the dataset
         """
         assert type(page) is int and page > 0
         assert type(page_size) is int and page_size > 0
-        
+
         dataset = self.dataset()
         data_length = len(dataset)
         try:
