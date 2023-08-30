@@ -1,10 +1,18 @@
+#!/usr/bin/env python3
+"""
+A Simple Flask app
+"""
 from flask import Flask, render_template
+
 
 app = Flask(__name__)
 
-@app.route('/')
-def index():
-    return render_template('index.html')
+
+@app.route('/', strict_slashes=False)
+def index() -> str:
+    """the / route is handled here"""
+    return render_template('0-index.html')
+
 
 if __name__ == '__main__':
-    app.run()
+    app.run(port="5000", host="0.0.0.0", debug=True)
